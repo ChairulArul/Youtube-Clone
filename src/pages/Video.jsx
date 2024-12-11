@@ -5,6 +5,8 @@ import styled from "styled-components";
 import ShareIcon from "@mui/icons-material/Share";
 import ThumbUpOutlinedIcon from "@mui/icons-material/ThumbUpOutlined";
 import ThumbDownOutlinedIcon from "@mui/icons-material/ThumbDownOutlined";
+import Comments from "../components/comments";
+import Card from "../components/Card";
 
 const Container = styled.div`
   display: flex;
@@ -169,8 +171,22 @@ const Video = () => {
             web dengan implementasi menggunakan bahasa pemrograman PHP ya.
           </ChannelSpan>
         </ChannelInfoAccount>
+        <Comments />
       </Content>
-      <Recommendation>Rekomendasi</Recommendation>
+      <Recommendation>
+        <Card type="sm" />
+        <Card type="sm" />
+        <Card type="sm" />
+        <Card type="sm" />
+        <Card type="sm" />
+        <Card type="sm" />
+        <Card type="sm" />
+        <Card type="sm" />
+        <Card type="sm" />
+        <Card type="sm" />
+        <Card type="sm" />
+        <Card type="sm" />
+      </Recommendation>
     </Container>
   );
 };

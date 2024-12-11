@@ -69,6 +69,9 @@ const Item = styled.div`
   gap: 20px;
   cursor: pointer;
   padding: 7.5px 0px;
+  &:hover {
+    background-color: ${({ theme }) => theme.soft};
+  }
 `;
 const Login = styled.div`
   font-size: 10px;
@@ -115,10 +118,12 @@ const Menu = ({ darkMode, setDarkMode }) => {
             Youtube
           </Logo>
         </Link>
-        <Item>
-          <HomeIcon />
-          Home
-        </Item>
+        <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
+          <Item>
+            <HomeIcon />
+            Home
+          </Item>
+        </Link>
         <Item>
           <ExploreIcon />
           Explore
@@ -138,10 +143,12 @@ const Menu = ({ darkMode, setDarkMode }) => {
         </Item>
         <Hr />
         <Login>Sign in to like videos, comments, and subscribe</Login>
-        <Button>
-          <AccountCircleIcon />
-          Sign in
-        </Button>
+        <Link to="signin" style={{ textDecoration: "none" }}>
+          <Button>
+            <AccountCircleIcon />
+            Sign in
+          </Button>
+        </Link>
         <Hr />
         <Title>Popular Channels</Title>
         <Item>

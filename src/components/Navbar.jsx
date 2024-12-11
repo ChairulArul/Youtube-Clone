@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { SearchOutlined } from "@mui/icons-material";
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
   position: sticky;
@@ -57,10 +58,12 @@ const Navbar = () => {
           <Input placeholder="Search" />
           <SearchOutlined />
         </Search>
-        <Button>
-          <AccountCircleIcon />
-          Sign in
-        </Button>
+        <Link to="signin" style={{ textDecoration: "none" }}>
+          <Button>
+            <AccountCircleIcon />
+            Sign in
+          </Button>
+        </Link>
       </Wrapper>
     </Container>
   );
