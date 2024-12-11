@@ -7,8 +7,8 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: #f9f9f9;
-  color: #0f0f0f;
+  color: ${({ theme }) => theme.text};
+  background-color: ${({ theme }) => theme.bg};
 `;
 
 const Wrapper = styled.div`
@@ -22,18 +22,32 @@ const Wrapper = styled.div`
   padding: 40px 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
+  background-color: ${({ theme }) => theme.bg};
+`;
+
+const LogoContainer = styled.div`
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
 `;
 
 const Logo = styled.img`
   height: 30px;
-  margin-bottom: 20px;
+  margin-right: 10px;
+`;
+
+const LogoText = styled.span`
+  font-family: "Roboto", sans-serif;
+  font-size: 22px;
+  font-weight: bolder;
+  color: #606060;
 `;
 
 const Title = styled.h1`
   font-size: 22px;
   font-weight: bold;
   margin-bottom: 20px;
-  color: #0f0f0f;
+  color: #606060;
 `;
 
 const SubTitle = styled.h2`
@@ -100,10 +114,13 @@ export const SignIn = () => {
   return (
     <Container>
       <Wrapper>
-        <Logo
-          src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg"
-          alt="YouTube Logo"
-        />
+        <LogoContainer>
+          <Logo
+            src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png"
+            alt="YouTube Logo"
+          />
+          <LogoText>YouTube</LogoText>
+        </LogoContainer>
         <Title>Sign In</Title>
         <SubTitle>to continue to YouTube</SubTitle>
         <Input placeholder="Email or phone" />
