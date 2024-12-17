@@ -140,7 +140,7 @@ const Video = () => {
           <ChannelContainer>
             <ChannelInfo>
               <ChannelImage
-                src="https://yt3.googleusercontent.com/Jg2d9WQ9Edhmnp7gk5BgMDRzos1YYE9JWlkbjnAqHWD4KooDY_KTkf7Vl23l7n1cFD-o3N9rIRU=s160-c-k-c0x00ffffff-no-rj"
+                src="https://yt3.googleusercontent.com/Jg2d9WQ9Edhmnp7gk5BgMDRzos1YYE9JWlkbjnAqHWD4KooDY_KTkf7Vl23l7n1cFD-o3N9rIRU=s900-c-k-c0x00ffffff-no-rj"
                 alt="Channel Profile"
               />
               <ChannelDetails>
