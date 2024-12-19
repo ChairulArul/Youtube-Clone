@@ -8,6 +8,10 @@ import { darkTheme, lightTheme } from "./utils/Theme";
 import Home from "../src/pages/Home";
 import Video from "./pages/Video";
 import SignIn from "./pages/SignIn";
+import Register from "./pages/SignUp";
+import SearchPage from "./pages/SearchPages"; // Halaman Pencarian
+import VideoPlayer from "./menu-category/VideoPlayer";
+import MusicPage from "./menu-category/MusicsPages";
 
 const Container = styled.div`
   display: flex;
@@ -37,7 +41,13 @@ function App() {
                 <Route path="/">
                   <Route index element={<Home />} />
                   <Route path="signin" element={<SignIn />} />
+                  <Route path="signup" element={<Register />} />
                   <Route path=":id" element={<Video />} />
+                  <Route path="search" element={<SearchPage />} />{" "}
+                  <Route path=":id" element={<Video />} />
+                  {/* to music section */}
+                  <Route path="/music" element={<MusicPage />} />
+                  <Route path="/video/:id" element={<VideoPlayer />} />
                 </Route>
               </Routes>
             </Wrapper>

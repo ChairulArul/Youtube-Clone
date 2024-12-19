@@ -1,5 +1,8 @@
+import { useState } from "react";
 import React from "react";
 import styled from "styled-components";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Container = styled.div`
   display: flex;
@@ -65,6 +68,8 @@ const Input = styled.input`
   border-radius: 5px;
   font-size: 14px;
   outline: none;
+  background-color: ${({ theme }) => theme.bg};
+  color: ${({ theme }) => theme.text};
   &:focus {
     border-color: #1a73e8;
     box-shadow: 0 0 3px rgba(26, 115, 232, 0.5);
@@ -110,7 +115,68 @@ const Link = styled.div`
   }
 `;
 
-export const SignIn = () => {
+const SignUpButton = styled.button`
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #1a73e8;
+  background-color: transparent;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 5px;
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
+const Span = styled.span`
+  text-align: center;
+  font-size: 15px;
+  color: #606060;
+  margin-top: 5px;
+  font-weight: 900;
+`;
+
+const SignIn = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const navigate = useNavigate(); // Inisialisasi navigate
+
+  const handleLogin = async () => {
+    setError(""); // Reset error
+
+    if (!email.trim() || !password.trim()) {
+      setError("Email and password are required.");
+      return;
+    }
+
+    try {
+      const response = await axios.post("http://localhost:5000/api/login", {
+        email,
+        password,
+      });
+
+      if (response.status === 200) {
+        alert(`Login successfully, Hello ${email}`); // Alert jika berhasil login
+        console.log("Login success:", response.data);
+      }
+    } catch (err) {
+      console.error("Login failed:", err);
+      if (err.response) {
+        setError(err.response.data.error);
+      } else {
+        setError("An unexpected error occurred.");
+      }
+    }
+  };
+
+  const handleSignUp = () => {
+    navigate("/signup"); // Arahkan ke halaman signup
+  };
+
   return (
     <Container>
       <Wrapper>
@@ -123,8 +189,21 @@ export const SignIn = () => {
         </LogoContainer>
         <Title>Sign In</Title>
         <SubTitle>to continue to YouTube</SubTitle>
-        <Input placeholder="Email or phone" />
-        <Button>Next</Button>
+        <Input
+          placeholder="Email or phone"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <Input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <Button onClick={handleLogin}>Login</Button>
+        {error && <p style={{ color: "red", fontSize: "12px" }}>{error}</p>}
+        <Span>or</Span>
+        <SignUpButton onClick={handleSignUp}>Create account</SignUpButton>
         <More>
           Not your computer? Use Guest mode to sign in privately.{" "}
           <Link>Learn more</Link>

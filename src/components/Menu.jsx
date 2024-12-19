@@ -153,7 +153,12 @@ const Menu = ({ darkMode, setDarkMode }) => {
         <Title>Popular Channels</Title>
         <Item>
           <LibraryMusicIcon />
-          Music
+          <Link
+            to="/music"
+            style={{ textDecoration: "none", color: "inherit" }}
+          >
+            Music
+          </Link>
         </Item>
         <Item>
           <SportsBasketballIcon />
