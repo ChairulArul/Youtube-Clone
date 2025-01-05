@@ -145,6 +145,51 @@ const PlaylistCardList = [
     author: "fajrul fx",
     details: "7 video",
   },
+  {
+    id: 7,
+    title: "FIKSI ILMIAH",
+    thumbnail: "https://i.ytimg.com/vi/_nNE3SdIFpk/maxresdefault.jpg",
+    author: "IQ7",
+    details: "75 video",
+  },
+  {
+    id: 8,
+    title: "REACTION DEANKT",
+    thumbnail:
+      "https://i.ytimg.com/vi/mPLmOIN5xDQ/hq720.jpg?sqp=-oaymwEXCK4FEIIDSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLA6zKzyW5QL0eUApwKAhmL8GCe7lA",
+    author: "DEANKT",
+    details: "19 video",
+  },
+  {
+    id: 9,
+    title: "Black Myth Wukong Playlist MiawAug Indonesia",
+    thumbnail:
+      "https://i.ytimg.com/vi/KK1KSqDLvQc/hq720.jpg?sqp=-oaymwEXCK4FEIIDSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLCIDRVo4bf70GbrJu1emzgnBrlsEw",
+    author: "Gadgetin",
+    details: "43 video",
+  },
+  {
+    id: 10,
+    title: "FAKTA DUNIA🌍",
+    thumbnail: "https://i.ytimg.com/vi/H_UfH_vY_Y4/hqdefault.jpg",
+    author: "INVOICE INDONESIA",
+    details: "367 video",
+  },
+  {
+    id: 11,
+    title: "VATRICK V2",
+    thumbnail: "https://i.ytimg.com/vi/ELZqy3v9HrE/maxresdefault.jpg",
+    author: "MyNameIsMail",
+    details: "6 video",
+  },
+  {
+    id: 12,
+    title: "Project Silvia S15 Rocket Bunny",
+    thumbnail:
+      "https://i.ytimg.com/vi/2Qi74YPNPiU/hq720.jpg?sqp=-oaymwEXCK4FEIIDSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLD1TMg-htUIhscPA6uUM_0-dgCRAQ",
+    author: "Garasi Drift",
+    details: "20 video",
+  },
 ];
 
 const Playlist = () => {
