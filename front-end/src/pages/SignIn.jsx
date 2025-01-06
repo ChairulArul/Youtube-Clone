@@ -111,8 +111,8 @@ const SignIn = () => {
       if (response.status === 200) {
         setMessage(response.data.message);
         localStorage.setItem("user", JSON.stringify(response.data.user));
-        localStorage.setItem("isLoggedIn", "true"); // Menambahkan flag isLoggedIn
-        navigate("/home"); // Redirect to home page after successful login
+        localStorage.setItem("isLoggedIn", "true");
+        navigate("/home");
       } else {
         setMessage(response.data.message);
       }
